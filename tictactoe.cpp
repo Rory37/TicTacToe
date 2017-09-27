@@ -19,7 +19,7 @@ int main() {
   while (game == true) {
     turnx = true;//Resets to x turn
     cout << "Welcome to TicTacToe!" << endl <<
-      "Please enter coordinates of the move as letter, than number. Ex: a1" << endl;
+      "Please enter coordinates of the move as letter, than number. Ex: a1" << endl << "Type in quit if you wish to quit" << endl;
     cout << "X has: " << xwin << " wins" << endl;//prints wins
     cout << "O has: " << owin << " wins" << endl;
     //clears board (could have used nested for loops)
@@ -42,6 +42,11 @@ int main() {
 	cout << "It is O's turn" << endl;
       }
       cin.getline(coor, 80); //gets coordinates, puts in an array letter than number
+      if (strcmp(coor, "quit") == 0){ //if quit is typed
+        game = false;// loops are all now false
+        playing = false;
+        break; //exit loop
+      }
       int i = -1;
       int j = -1;
       if (coor [0] == 'a') {//checks whether a b or c. If not rejects the input
